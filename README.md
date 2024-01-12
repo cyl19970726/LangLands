@@ -118,4 +118,18 @@ In summary, our team is dedicated to integrating a broader range of general hard
     
 - How is your project onboarding the Next Billion users and reaching those underrepresented in the Ethereum community?
     
-    Our project aims to onboard the next billion users and reach those underrepresented in the Ethereum community by leveraging the capabilities of Zero-Knowledge Proofs (ZKPs). ZKPs can effectively expand Ethereum's computational capacity. Unlike Ethereum's trust system, which is established through economic costs, ZKPs create a trust system derived from multi-party game theory. The core principle of both systems relies on the internet to transition from a human collaboration system, dependent on national or powerful entities for public trust, to a robust trust system where even the smallest entities can engage in commercial cooperation through ZKPs and Ethereum. This system enables transactions, akin to buying and selling
+    Our project aims to onboard the next billion users and reach those underrepresented in the Ethereum community by leveraging the capabilities of Zero-Knowledge Proofs (ZKPs). ZKPs can effectively expand Ethereum's computational capacity. Unlike Ethereum's trust system, which is established through economic costs, ZKPs create a trust system derived from multi-party game theory. The core principle of both systems relies on the internet to transition from a human collaboration system, dependent on national or powerful entities for public trust, to a robust trust system where even the smallest entities can engage in commercial cooperation through ZKPs and Ethereum. This system enables transactions, akin to buying and selling goods, without relying on third-party platforms like Amazon.
+    
+    To realize this vision, we must generate ZKP proofs in an extremely short time. Hence, exploring the most efficient methods for generating ZKP proofs is crucial. Our focus on accelerating Multi-Scalar Multiplication (MSM) using FPGA, ASIC, and GPU technologies is essential since, for some proof systems, up to 80% of the computation time is spent on MSM. By maximizing the speed of MSM, we aim to bring ZKPs into practical use in real-world scenarios.
+    
+    This approach can potentially lead to a more equitable global wealth distribution by eliminating the need for powerful third-party entities and reducing military conflicts. By diminishing friction in commercial collaborations and fostering healthier production relationships, we can transmit individual credit through the ZKP+Ethereum trust network to every corner of the world.
+    
+- Roadmap and timeline for the project, in addition, or simultaneously to the Fellowship duration*
+    - **Milestone 1**:
+        - Completing educational versions of MSM, FFT, and NTT CUDA code (like https://github.com/0xPARC/plonkathon), along with analysis articles for Icicle and SPpark; plus additional MSM-related papers (EDMSM, PipeMSM, Pippenger).
+    - **Milestone 2**:
+        - Providing a comprehensive polynomial library supporting KZG and FRI schemes, compatible with Plonkup, offering acceleration options of SPpark and Icicle.
+    - **Milestone 3**:
+        - Integrating more lookup arguments, initially planning Caulk+, CQ, and Lasso, including GPU-accelerated versions.
+    - **Milestone 4**:
+        - Offer our proprietary FPGA version of MSM.

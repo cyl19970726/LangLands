@@ -51,14 +51,13 @@ This standard polynomial repository will be immensely beneficial for teams devel
 
 **To ensure we can filter most hardware acceleration libraries and provide diversity for the entire ZKP ecosystem and decentralized provers, we will explore efficient MSM acceleration on GPUs, FPGAs, and ASICs. We also aim to provide more educational articles to promote the flourishing development of the ZKP GPU acceleration industry.**
 
-We will also try to explore our specialized FPGA version in the future to provide better performance.  In the context of Zero-Knowledge Proofs (ZKP), the choice between FPGA (Field-Programmable Gate Array) and GPU (Graphics Processing Unit) for hardware acceleration is pivotal. Recent developments indicate a nuanced comparison:
+We will also try to explore our specialized FPGA version in the future to provide better performance. Our final goal is ASIC of ZK. Test the RTL design on FPGA is necessary our indispensable validation tool.
 
-- Performance-per-Watt: FPGAs match GPUs in terms of performance-per-watt, which is crucial for applications where energy efficiency is a priority. However, FPGAs fall behind in performance-per-dollar compared to GPUs, making them less cost-effective in some scenarios .
-- Application-Specific Acceleration: FPGA's architecture allows for more customized and application-specific acceleration. This is particularly beneficial for ZKP computations like MSM (Multi-Scalar Multiplication), where FPGAs can be tailored to optimize these specific operations .
-- ZPrize Incentives: Competitions like ZPrize are motivating teams to develop hardware acceleration solutions for key ZKP bottlenecks (MSM, NTT, Poseidon, etc.) on various platforms, including FPGAs.
-- Advantages in ZKP Calculations: The advantages and disadvantages of FPGAs and GPUs vary in accelerating zero-knowledge proof calculations. Factors like the specific computation (e.g., MSM) and the desired balance between energy efficiency and cost play a significant role in determining the ideal hardware choice].
-- Disadvantages of FPGAs: A notable downside of FPGAs is their limited flexibility compared to GPUs. This can impact their adaptability in some ZKP applications.
-- State-of-the-Art Solutions: Recent FPGA implementations, especially for MSM on specific curves like BLS12-377, have outperformed existing state-of-the-art solutions, showcasing FPGA's potential in ZKP acceleration.
+- FPGA offers greater flexibility, enabling the efficient solidification of unnecessary instruction flows and the creation of more optimized data pipelines.
+
+- Presently, chip designs are predominantly closed-source, with specific details not openly disclosed due to commercial considerations. Nevertheless, a degree of openness in certain design aspects can enhance the diversity of the hardware ecosystem and mitigate the risk of supply chain attacks.
+
+- On FPGA, MSM, NTT and other algorthim has some open-source implementations from the academic community. Leveraging the team's expertise in Zero-Knowledge proofs (ZK), it can better validate and integrate these academic designs.
 
 These insights suggest that while FPGAs offer significant advantages in customization and energy efficiency for ZKP computations, their cost-effectiveness and adaptability may be lower compared to GPUs.
 

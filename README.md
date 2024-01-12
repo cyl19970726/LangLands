@@ -59,7 +59,7 @@ We will also try to explore our specialized FPGA version in the future to provid
 
 - On FPGA, MSM, NTT and other algorthim has some open-source implementations from the academic community. Leveraging the team's expertise in Zero-Knowledge proofs (ZK), it can better validate and integrate these academic designs.
 
-These insights suggest that while FPGAs offer significant advantages in customization and energy efficiency for ZKP computations, their cost-effectiveness and adaptability may be lower compared to GPUs.
+- This project can provide more possibilities for the future by making the Ethereum ZK layer less reliant on limited hardware companies. This will increase overall ecological diversity, decentralization, and resistance to censorship.
 
 ## Project Scope
 
@@ -84,6 +84,19 @@ In summary, our team is dedicated to integrating a broader range of general hard
     
 
 # Apply EF Grant
+
+- What is your story?
+*We'd love to hear more about you. What is your personal quest?*
+
+    We want to create a project from scratch, starting from zero to one. This project aims to provide more possibilities for the future by making the Ethereum ZK layer less reliant on limited hardware companies. This will increase overall ecological diversity, decentralization, and resistance to censorship in the hardware perspective.
+
+    Harold is a BSP engineer from China, who has 4+ years of experience developing driver for cryptographic hardware. during a year of exploration, I found Plancker DAO and did the research on Rollup, network state and so on with this community.
+
+    XHash is a Web3.0 infrastructure provider, our vision is to build a stable, reliable, and secure blockchain infrastructure, provides POS staking service and multichain API to improve Web3.0 development with our customers.
+
+    Plancker^ serves as a collaborative space dedicated to the Ethereum ecosystem, offering communication, education, treasure, and various resources to developers, product engineers, and researchers. Together, we are committed to building along the Ethereum roadmap, contributing to a digital future for all of humanity.
+
+    Langlands is currently in close collaboration with Nebra. Considering that the current cloud infrastructure is more focused on AI scenarios, we are jointly dedicated to researching server configurations that are better suited for ZK business. This aims to provide improved services to a wide range of ZK teams. Additionally, we plan to collaboratively release a series of ZK Benchmarks and optimize relate software stack.
 
 - Please describe your idea/project/research.
     

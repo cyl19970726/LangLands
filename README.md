@@ -43,7 +43,9 @@
 2. Integration challenges of libraries like Icicle and Sppark into one's protocols, typically allowing for the integration of only one due to resource constraints.
 3. We currently lack many ZKP hardware acceleration engineers because there are very few people with the knowledge base of both zkp and hardware acceleration, and the learning fields in these two fields are also very steep. We need to provide something like [https://learn.0xparc.org](https://learn.0xparc.org/) /halo2/’s courses to help more people enter this field.
 
-**We aim to provide a user-friendly polynomial library with comprehensive documentation, supporting both univariate and multivariate polynomials, along with commitment schemes like KZG, FRI, Sumcheck. We plan to gradually include various lookup protocols like Caulk+ and CQ, Lasso, and integrate both Icicle and Sppark, along with future general acceleration libraries.**
+**We aim to provide a user-friendly polynomial** repository **with comprehensive documentation, supporting both univariate and multivariate polynomials, along with commitment schemes like KZG, FRI, Sumcheck. We plan to gradually include various lookup protocols like Caulk+ and CQ, Lasso, and integrate both Icicle and Sppark, along with future general acceleration libraries.**
+
+This standard polynomial repository will be immensely beneficial for teams developing new proof systems. They can simply define their arithmetic constraints, including lookup arguments, and convert them into polynomial forms using our repository. This eliminates the need for developing a separate polynomial repository. Furthermore, our platform will be versatile, supporting various hardware accelerations like GPU, FPGA, and ASIC, offering flexibility and ease in selecting the most suitable hardware option.
 
 **Additionally, we will offer a simple CUDA version of MSM code, akin to https://github.com/0xPARC/plonkathon, to onboard more developers into the field of ZKP GPU acceleration and collaboratively enhance this polynomial library.**
 

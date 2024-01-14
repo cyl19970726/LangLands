@@ -1,15 +1,14 @@
-# LangLands
-# Introduction & Motivation
+# LangLands Introduction & Motivation
 
-**Recent years have seen rapid developments in SNARKs, with provers becoming increasingly faster and the cost of verification becoming more affordable zkEVM has transitioned from a concept to reality, and RISC0 has even ushered in an era where any program can be verified. We now have various proof systems such as Halo2, Plonky2, Plonky3, EthStark, eStark, Spartan, and others.**
+Recent years have seen rapid developments in SNARKs, with provers becoming increasingly faster and the cost of verification becoming more affordable zkEVM has transitioned from a concept to reality, and RISC0 has even ushered in an era where any program can be verified. We now have various proof systems such as Halo2, Plonky2, Plonky3, EthStark, eStark, Spartan, and others.
 
-**These proof systems can generally be divided into front-end and back-end components. The front end primarily consists of constraint systems like Plonkish, AIR, and R1CS. The back-end, or Polynomial Commitment Scheme, mainly involves KZG, FRI, and Sumcheck.**
+These proof systems can generally be divided into front-end and back-end components. The front end primarily consists of constraint systems like Plonkish, AIR, and R1CS. The back-end, or Polynomial Commitment Scheme, mainly involves KZG, FRI, and Sumcheck.
 
-**For instance, Plonkish combined with KZG constitutes Halo2. A crucial factor is the choice of the domain for the Commitment Scheme, with smaller domains often being preferred.**
+For instance, Plonkish combined with KZG constitutes Halo2. A crucial factor is the choice of the domain for the Commitment Scheme, with smaller domains often being preferred.
 
-## Software Acceleration
+## Software Acceleration overview
 
-**Looking back at the development history of these protocols, we can summarize the following trends in SNARK acceleration:**
+Looking back at the development history of these protocols, we can summarize the following trends in SNARK acceleration:
 
 1. **Choice of Domain**:
     - The primary difference between SNARK and STARK, for example, is that STARK's arithmetic circuit and commitment are in the same domain, and its domain is smaller than SNARK's scalar field and base field, granting STARK faster proof generation. Additionally, STARK's single-domain structure enhances its recursive performance over SNARK.
@@ -23,27 +22,27 @@
 
 **Reflecting on these trends, we find that most optimizations eventually translate into enhancements in polynomial or polynomial commitment methods, signifying a trend towards optimizing these aspects in SNARK protocols.**
 
-## Hardware Acceleration
+## Hardware Acceleration overview 
 
-**While these are predominantly software optimizations, another significant trend is hardware acceleration of operations like MSM, FFT, and NTT. For Plonk, around 80% of zk-SNARK proof generation time is spent on MSM, making its optimization crucial.**
+While these are predominantly software optimizations, another significant trend is hardware acceleration of operations like MSM, FFT, and NTT. For Plonk, around 80% of zk-SNARK proof generation time is spent on MSM, making its optimization crucial.
 
-**Current hardware acceleration methods include GPUs, FPGAs, and ASICs. For MSM, FFT, and NTT, notable GPU acceleration libraries are Icicle, Sppark, and Tachyon.**
+Current hardware acceleration methods include GPUs, FPGAs, and ASICs. For MSM, FFT, and NTT, notable GPU acceleration libraries are Icicle, Sppark, and Tachyon.
 
-**There are multiple GPU versions of Halo2, such as the Scroll, DelphinusLab, and Ingoyama versions.**
+There are multiple GPU versions of Halo2, such as the Scroll, DelphinusLab, and Ingoyama versions.
 
-**GPU acceleration for Plonky2 is currently available in Ola's version and orbiter version.**
+GPU acceleration for Plonky2 is currently available in Ola's version and orbiter version.
 
-**Notable teams for FPGA acceleration include Cysis, Ingoyama, and Ulvetanna.**
+Notable teams for FPGA acceleration include Cysis, Ingoyama, and Ulvetanna.
 
-**Overall, GPUs are the mainstream method, but FPGAs are becoming increasingly popular. (todo: ZPU)**
+Overall, GPUs are the mainstream method, but FPGAs are becoming increasingly popular. (todo: ZPU)
 
-**However, we identify two issues with current hardware acceleration:**
+**However, we identify three issues with current hardware acceleration:**
 
 1. Repetitive optimization of the same framework for halo2 by Scroll, Ingoyama, and DelphinusLab.
 2. Integration challenges of libraries like Icicle and Sppark into one's protocols, typically allowing for the integration of only one due to resource constraints.
 3. We currently lack many ZKP hardware acceleration engineers because there are very few people with the knowledge base of both ZKP and hardware acceleration, and the learning fields in these two fields are also very steep. We need to provide something like [https://learn.0xparc.org](https://learn.0xparc.org/) /halo2/’s courses to help more people enter this field.
 
-**We aim to provide a user-friendly polynomial** repository **with comprehensive documentation, supporting both univariate and multivariate polynomials, along with commitment schemes like KZG, FRI, and Sumcheck. We plan to gradually include various lookup protocols like Caulk+ and CQ, Lasso, and integrate both Icicle and Sppark, along with future general acceleration libraries.**
+**We aim to provide a user-friendly polynomial repository with comprehensive documentation, supporting both univariate and multivariate polynomials, along with commitment schemes like KZG, FRI, and Sumcheck. We plan to gradually include various lookup protocols like Caulk+ and CQ, Lasso, and integrate both Icicle and Sppark, along with future general acceleration libraries.**
 
 This standard polynomial repository will be immensely beneficial for teams developing new proof systems. They can simply define their arithmetic constraints, including lookup arguments, and convert them into polynomial forms using our repository. This eliminates the need for developing a separate polynomial repository. Furthermore, our platform will be versatile, supporting various hardware accelerations like GPU, FPGA, and ASIC, offering flexibility and ease in selecting the most suitable hardware option.
 
@@ -51,7 +50,7 @@ This standard polynomial repository will be immensely beneficial for teams devel
 
 **To ensure we can filter most hardware acceleration libraries and provide diversity for the entire ZKP ecosystem and decentralized provers, we will explore efficient MSM acceleration on GPUs, FPGAs, and ASICs. We also aim to provide more educational articles to promote the flourishing development of the ZKP GPU acceleration industry.**
 
-We will also try to explore our specialized FPGA version in the future to provide better performance. Our final goal is ASIC of ZK. Test the RTL design on FPGA is necessary our indispensable validation tool.
+We will also explore our specialized FPGA version in the future to provide better performance. Our final goal is ASIC of ZK. Test the RTL design on FPGA is necessary our indispensable validation tool.
 
 - FPGA offers greater flexibility, enabling the efficient solidification of unnecessary instruction flows and the creation of more optimized data pipelines.
 
@@ -65,9 +64,9 @@ We will also try to explore our specialized FPGA version in the future to provid
 
 In summary, our team is dedicated to integrating a broader range of general hardware acceleration libraries into a comprehensive polynomial library. This integration aims to facilitate more efficient Zero-Knowledge Proof (ZKP) processing. Key aspects of our focus include:
 
-1. **Comprehensive Polynomial Library Development**: Creating a unified polynomial library that incorporates various hardware acceleration libraries, enhancing the efficiency and flexibility of ZKP computations.
-2. **Educational Content on ZKP Hardware Acceleration**: Producing educational materials to demystify and simplify the understanding of ZKP hardware acceleration. This initiative will help onboard more developers and researchers into the field.
-3. **Exploration of FPGA-Based MSM Algorithm**: Investigating and developing an FPGA version of the Multi-Scalar Multiplication (MSM) algorithm. FPGA technology offers promising performance-per-watt efficiency, making it an intriguing area for research and development in ZKP acceleration [[1](https://hackmd.io/@Cysic/BJQcpVbXn)][[2](https://www.paradigm.xyz/2022/04/zk-hardware)][[3](https://www.ingonyama.com/blog/hardware-review-gpus-fpgas-and-zero-knowledge-proofs)].
+1. Comprehensive Polynomial Library Development**: Creating a unified polynomial library that incorporates various hardware acceleration libraries, enhancing the efficiency and flexibility of ZKP computations.
+2. Educational Content on ZKP Hardware Acceleration**: Producing educational materials to demystify and simplify the understanding of ZKP hardware acceleration. This initiative will help onboard more developers and researchers into the field.
+3. Exploration of FPGA-Based MSM Algorithm**: Investigating and developing an FPGA version of the Multi-Scalar Multiplication (MSM) algorithm. FPGA technology offers promising performance-per-watt efficiency, making it an intriguing area for research and development in ZKP acceleration
 
  
 
@@ -88,13 +87,15 @@ In summary, our team is dedicated to integrating a broader range of general hard
 - What is your story?
 *We'd love to hear more about you. What is your personal quest?*
 
-    We want to create a project from scratch, starting from zero to one. This project aims to provide more possibilities for the future by making the Ethereum ZK layer less reliant on limited hardware companies. This will increase overall ecological diversity, decentralization, and resistance to censorship in the hardware perspective.
+    We want to create a project from scratch, starting from zero to one. This project aims to provide more possibilities for the future by making the Ethereum ZK layer less reliant on limited hardware companies. This will increase overall ecological diversity, decentralization, and resistance to censorship from the hardware perspective.
 
-    Harold is a BSP engineer from China, who has 4+ years of experience developing driver for cryptographic hardware. during a year of exploration, I found Plancker DAO and did the research on Rollup, network state and so on with this community.
-    Kenway is the CTO of XHash, have 15 years of software development experience and 4 years of blockchain work experience. Mainly focus on the research and achievement of the Ethereum consensus mechanism. How to make Ethereum more decentralized is my main work content.
-    Yanlong is an experienced developer in the blockchain and Ethereum ecosystem. As a contributor of EthStorage, Yanlong focuses on its Proof-of-Storage ZK-SNARK algorithm. Additionally, Yanlong is a contributor of https://github.com/0xEigenLabs/eigen-zkvm, which focuses on implementing zkVM using STARK technology.
+    Harold is a BSP engineer from China, who has 4+ years of experience developing drivers for cryptographic hardware. during a year of exploration, I found Plancker DAO and did research on Rollup, network state, and so on with this community.
+  
+    Kenway is the CTO of XHash and has 15 years of software development experience and 4 years of blockchain work experience. Mainly focus on the research and achievement of the Ethereum consensus mechanism. How to make Ethereum more decentralized is my main work content.
+  
+    Yanlong is an experienced developer in the blockchain and Ethereum ecosystem. As a contributor to EthStorage, Yanlong focuses on its Proof-of-Storage ZK-SNARK algorithm. Additionally, Yanlong is a contributor to https://github.com/0xEigenLabs/eigen-zkvm, which focuses on implementing zkVM using STARK technology.
 
-    XHash is a Web3.0 infrastructure provider, our vision is to build a stable, reliable, and secure blockchain infrastructure, provides POS staking service and multichain API to improve Web3.0 development with our customers.
+    XHash is a Web3.0 infrastructure provider, our vision is to build a stable, reliable, and secure blockchain infrastructure, providing POS staking service and multichain API to improve Web3.0 development with our customers.
 
     Plancker^ serves as a collaborative space dedicated to the Ethereum ecosystem, offering communication, education, treasure, and various resources to developers, product engineers, and researchers. Together, we are committed to building along the Ethereum roadmap, contributing to a digital future for all of humanity.
 

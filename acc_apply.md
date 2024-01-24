@@ -6,41 +6,42 @@ A proposal will go through a review process by a PSE to ensure the quality of th
 
 ### Executive Summary
 
-- Project Overview: Implement KZG over a polynomial repo and integrate Sppark and Icicle
+- Project Overview: Implement KZG over a polynomial repository and integrate Sppark and Icicle
 
 ### Project Details
 
 - Motivation:
-    - The different high-performance hardware-accelerated versions of the same proof system, developed by various teams, are often proprietary because, for most teams, it is a vital weapon that allows them to survive in commercial competition. This situation is similar to the existence of multiple GPU versions of a game like Halo2, with examples including the Scroll, DelphinusLab, Tachyon, and Ingoyama versions. Each version, developed by different teams, brings unique features or performance enhancements that provide a competitive edge in the market. But I don’t think this is the way to maximize value because developers often do a lot of duplication of work.
-    - In the future, there may be more such general acceleration libraries that not only work on GPUs but also on ASICs and FPGAs. So for most teams, it is impossible for them to spend a lot of time integrating so much hardware. acceleration libraries and compare their performance differences one by one. We need to add an intermediate layer to the proof system and the hardware acceleration library so that most teams that develop proof systems only need to integrate this middle layer to run on different hardware flexibly. Switch between acceleration plans. Zpu is a potential solution, but we hope to do this in the upper polynomial layer of ZPU developed by Ingoyama, because for all proof systems, they essentially end up operating on polynomials, so we hope to provide a useful polynomial library and integrate enough common hardware acceleration libraries on this library.
-    - We currently lack many ZKP hardware acceleration engineers because there are very few people with the knowledge base of both ZKP and hardware acceleration, and the learning fields in these two fields are also very steep. We need to provide something like https://learn.0xparc.org/ /halo2/’s courses to help more developers enter this area.
+    - Different high-performance hardware-accelerated versions of the same proof system, developed by various teams, are often proprietary. Because, for most teams, it serves as a vital weapon that allows them to survive in commercial competition. This situation is similar to the existence of multiple GPU versions of a game like Halo2. For example, some famous versions are from the Scroll, DelphinusLab, Tachyon, and Ingonyama versions. Each version brings unique features or performance enhancements that provide a competitive edge in the market. However, we believe this pattern may not maximize value as it leads to duplication of work among developers.
+    - Insert a layer between a proof system and a hardware acceleration library. It is expected more general acceleration libraries in the future, working on GPUs, ASICs, and FPGAs. However, it would be impractical and time-consuming to integrate so many hardware acceleration libraries and compare their performances. To address this challenge, we propose the addition of an intermediate layer between a proof system and a hardware acceleration library. It would allow teams developing proof systems to integrate this middle layer and seamlessly switch between different hardware acceleration libraries, without the need for extensive integration efforts. ZPU is a polynomial library developed by Ingonyama. It is a potential solution by extending the upper polynomial layer of ZPU since all proof systems essentially operate on polynomials. Our work would provide a useful polynomial library integrated with sufficient common hardware acceleration libraries.
+    - Develop courses for beginners and developers. There is a huge shortage of ZKP hardware acceleration engineers in the market. One of the reasons is the steep learning curves for gaining a solid knowledge of ZKP and hardware acceleration. To address this challenge, we will develop tutorial courses based on our experiences to help more developers enter this area. The proposed courses would be similar to those offered in the Halo2 program https://learn.0xparc.org/, but be more beginner-friendly and up-to-date. 
 - Scope of Work:
-    - Choose a polynomial library that is general enough, and we decide to select https://github.com/arkworks-rs/algebra/tree/master/poly as the repo to develop.
-    - Implement KZG over this polynomial repo and integrate Sppark and Icicle
-    - We plan to output some educational content about developing the MSM algorithm using Cuda and compare it with different MSM-CUDA versions developed by different awesome teams.
+    - Choose a polynomial library that is general enough. We have tentatively decided to select https://github.com/arkworks-rs/algebra/tree/master/poly as the repository to develop. This repository provides a wide range of functionality and features that make it suitable for handling various polynomial-related tasks.
+    - Implement KZG(Kate-Zaverucha-Groth) over this polynomial repository and integrate Sppark and Icicle libraries.
+    - Output some educational content on developing the MSM algorithm using CUDA and the comparative analysis of different MSM-CUDA versions developed by different awesome teams.
 - Expected Outcomes:
-    - Implement KZG over this polynomial repo and integrate Sppark and Icicle.
+    - Implementation of KZG over the chosen polynomial repository and seamless integration of the Sppark and Icicle libraries to enhance the functionality and security of the scheme.
     - Support cq's lookup protocol
 
 ### Qualifications
 
 - Skills Required:
+    - Deep understanding of SNARK
     - Good rust development capabilities
-    - A deep understanding of snark
-    - A certain understanding of GPU programming
+    - Good understanding of GPU programming
 - Preferred Qualifications:
-    - Excellent document writing skills
+    - Excellent English document writing skills
 
 ### Administrative Details
 
 - Estimated Project Duration:
     The deadline is February 31
 - Project Complexity:
-    - Medium, Because to complete this work, you need to have a certain understanding of a variety of technologies. Still, you do not need to have a deep understanding of every technical field, and more work is to find some better technical solutions on the market. , combine them .
+    - 这句话是不是有问题，Medium, Because to complete this work, you need to have a certain understanding of a variety of technologies. Still, you do not need to have a deep understanding of every technical field, and more work is to find some better technical solutions on the market. , combine them.
 
 ### Additional Information
 
 - Reference Material:
-    - We ultimately hope that this project can integrate more lookup arguments and more commit schemes.
-    - icicle: https://github.com/ingonyama-zk/icicle.git
-    - sppark: https://github.com/supranational/sppark.git
+    - The ultimate goal of this project is to integrate most of the popular lookup arguments and commit schemes.
+    - Icicle: https://github.com/ingonyama-zk/icicle.git
+    - Sppark: https://github.com/supranational/sppark.git
+****

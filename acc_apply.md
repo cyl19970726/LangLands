@@ -37,7 +37,7 @@ A proposal will go through a review process by a PSE to ensure the quality of th
 - Estimated Project Duration:
     The deadline is February 31
 - Project Complexity:
-    - Medium, Because to complete this work, you need to have a certain understanding of a variety of technologies. Still, you do not need to have a deep understanding of every technical field, and more work is to find some better technical solutions on the market. , combine them .
+    - Medium, Because to complete this work, you need to have a certain understanding of a variety of technologies. Still, you do not need to have a deep understanding of every technical field, and more work is to find some better technical solutions on the market. , combine them.
 
 ### Additional Information
 

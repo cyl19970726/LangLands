@@ -20,7 +20,8 @@ A proposal will go through a review process by a PSE to ensure the quality of th
     - We plan to output some educational content about developing the MSM algorithm using Cuda and compare it with different MSM-CUDA versions developed by different awesome teams.
 - Expected Outcomes:
     - Implement KZG over this polynomial repo and integrate Sppark and Icicle.
-    - Support cq's lookup protocol
+    - Support CQ lookup argument
+    - Write an article to summarize the similarities and differences between Icicle and Sppark in the implementation of the MSM algorithm and compare the performance data.
 
 ### Qualifications
 
